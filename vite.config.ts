@@ -1,7 +1,14 @@
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+    plugins: [react()],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                // main.scss collects base and blocks with @import
+                silenceDeprecations: ["import"]
+            }
+        }
+    }
+});

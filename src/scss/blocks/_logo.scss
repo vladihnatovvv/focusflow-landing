@@ -1,0 +1,23 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &__icon {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+    }
+
+    &__text {
+        font-family: $fontTitle;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: -0.02em;
+        color: $colorInk;
+    }
+
+    &.light &__text {
+        color: $colorWhite;
+    }
+}

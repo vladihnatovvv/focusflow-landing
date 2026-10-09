@@ -1,0 +1,260 @@
+.hero {
+    position: relative;
+    padding: $headerHeight + 56px 0px 112px 0px;
+
+    &__glow-green {
+        position: absolute;
+        top: -160px;
+        right: -160px;
+        width: 560px;
+        height: 560px;
+        border-radius: 50%;
+        background-color: rgba($colorMintLight, 0.7);
+        filter: blur(64px);
+        pointer-events: none;
+    }
+
+    &__glow-amber {
+        position: absolute;
+        top: 50%;
+        left: -128px;
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        background-color: rgba($colorAmberLight, 0.15);
+        filter: blur(64px);
+        pointer-events: none;
+    }
+
+    &__container {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 32px;
+    }
+}
+
+.content-hero {
+    &__title {
+        margin-top: 24px;
+        font-family: $fontTitle;
+        font-weight: 700;
+        font-size: 68px;
+        line-height: 105%;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+    }
+
+    &__accent {
+        position: relative;
+        white-space: nowrap;
+        color: $colorGreenDark;
+    }
+
+    &__underline {
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        color: $colorAmberLight;
+    }
+
+    &__text {
+        max-width: 576px;
+        margin-top: 24px;
+        font-size: 18px;
+        line-height: 160%;
+        color: $colorGray;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 32px;
+    }
+
+    &__note {
+        margin-top: 12px;
+        font-size: 12px;
+        color: $colorGray;
+    }
+
+    &__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        max-width: 448px;
+        margin-top: 40px;
+        padding-top: 32px;
+        border-top: 1px solid rgba($colorInk, 0.1);
+    }
+
+    &__value {
+        font-family: $fontTitle;
+        font-weight: 700;
+        font-size: 30px;
+    }
+
+    &__caption {
+        margin-top: 4px;
+        font-size: 14px;
+        color: $colorGray;
+    }
+}
+
+.image-hero {
+    position: relative;
+    width: 100%;
+    max-width: 448px;
+    margin: 0 auto;
+
+    &__bg {
+        position: absolute;
+        top: 40px;
+        right: 24px;
+        bottom: 16px;
+        left: 24px;
+        border-radius: 48px;
+        background: linear-gradient(135deg, $colorMintLight, $colorPaperDark, rgba($colorAmberLight, 0.3));
+    }
+
+    &__phone {
+        position: relative;
+        padding: 24px 0px;
+    }
+
+    &__streak {
+        top: 64px;
+        left: -8px;
+    }
+
+    &__week {
+        right: -8px;
+        bottom: 64px;
+        animation-delay: 1.5s;
+    }
+
+    &__streak .card-hero__icon {
+        background-color: rgba($colorAmberLight, 0.2);
+        color: $colorAmber;
+    }
+
+    &__week .card-hero__icon {
+        background-color: $colorMint;
+        color: $colorGreenDark;
+    }
+}
+
+.card-hero {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px 12px 12px;
+    border-radius: 16px;
+    background-color: $colorWhite;
+    box-shadow: $shadowSoft;
+    animation: float 6s ease-in-out infinite;
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__caption {
+        font-size: 12px;
+        color: $colorGray;
+    }
+
+    &__value {
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 1025px) {
+    .hero {
+        padding: $headerHeightMobile + 48px 0px 80px 0px;
+
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 56px;
+        }
+    }
+
+    .content-hero {
+        text-align: center;
+
+        &__title {
+            font-size: 56px;
+        }
+
+        &__text {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &__buttons {
+            justify-content: center;
+        }
+
+        &__stats {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .content-hero__title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 528px) {
+    .hero {
+        padding: $headerHeightMobile + 32px 0px 64px 0px;
+    }
+
+    .content-hero {
+        &__title {
+            font-size: 40px;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+
+        &__buttons {
+            flex-direction: column;
+        }
+
+        &__button {
+            width: 100%;
+        }
+
+        &__value {
+            font-size: 24px;
+        }
+
+        &__caption {
+            font-size: 12px;
+        }
+    }
+
+    .card-hero {
+        display: none;
+    }
+}

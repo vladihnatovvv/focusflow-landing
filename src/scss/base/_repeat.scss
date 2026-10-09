@@ -1,0 +1,165 @@
+// section title
+.title {
+    max-width: 672px;
+    margin: 0 auto;
+    text-align: center;
+
+    &__text {
+        margin-top: 16px;
+        font-family: $fontTitle;
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+        color: $colorInk;
+    }
+
+    &__description {
+        margin-top: 16px;
+        font-size: 18px;
+        line-height: 160%;
+        color: $colorGray;
+    }
+}
+
+.label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background-color: $colorMint;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $colorGreenDeep;
+
+    svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+// buttons
+%button {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 140%;
+    white-space: nowrap;
+    transition: all 0.2s linear;
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.button-black {
+    @extend %button;
+    background-color: $colorInk;
+    color: $colorWhite;
+}
+
+.button-accent {
+    @extend %button;
+    background-color: $colorGreen;
+    color: $colorWhite;
+}
+
+.button-white {
+    @extend %button;
+    background-color: $colorWhite;
+    color: $colorInk;
+    box-shadow: inset 0 0 0 1px rgba($colorInk, 0.1);
+}
+
+.button-big {
+    padding: 14px 28px;
+    font-size: 16px;
+}
+
+@media (hover: hover) {
+    .button-black:hover {
+        transform: translateY(-2px);
+        background-color: $colorGreenDeep;
+        box-shadow: $shadowSoft;
+    }
+
+    .button-accent:hover {
+        transform: translateY(-2px);
+        background-color: $colorGreenDark;
+        box-shadow: $shadowSoft;
+    }
+
+    .button-white:hover {
+        box-shadow: inset 0 0 0 1px rgba($colorInk, 0.25);
+    }
+}
+
+// accessibility
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 16px;
+    z-index: 30;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background-color: $colorInk;
+    color: $colorWhite;
+    font-size: 14px;
+    transition: all 0.2s linear;
+
+    &:focus {
+        top: 16px;
+    }
+}
+
+// animations
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .title__text {
+        font-size: 36px;
+    }
+
+    .title__description {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 528px) {
+    .title__text {
+        font-size: 30px;
+    }
+}

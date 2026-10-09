@@ -6,8 +6,9 @@ Responsive landing page for **FocusFlow**, a (fictional) mobile app for producti
 
 - [React 19](https://react.dev) + [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vite.dev) for dev server and production build
-- [Tailwind CSS 3](https://tailwindcss.com) for styling
+- [Sass (SCSS)](https://sass-lang.com) with BEM naming for styling
 - [lucide-react](https://lucide.dev) for icons
+- Prettier for formatting (4 spaces, double quotes, 150 chars)
 
 ## Sections
 
@@ -33,12 +34,18 @@ Responsive landing page for **FocusFlow**, a (fictional) mobile app for producti
 
 ```
 src/
-├── components/      # One component per section + shared UI (Logo, SectionHeading, PhoneMockup)
-├── data/content.ts  # All copy and typed data (nav, features, steps, plans, testimonials)
-├── App.tsx          # Page composition
-├── index.css        # Tailwind layers + small set of reusable component classes
+├── components/          # One component per block + shared UI (Logo, Title, Phone)
+├── data/content.ts      # All copy and typed data (nav, features, steps, plans, reviews, footer links)
+├── scss/
+│   ├── base/            # _vars (colors, fonts, shadows), _reset, _repeat (title, buttons, helpers)
+│   ├── blocks/          # One partial per BEM block: _header, _hero, _steps, _pricing ...
+│   └── main.scss        # Imports base and blocks
+├── utils/classNames.ts  # Joins BEM classes with state classes (active, scrolled, popular)
+├── App.tsx
 └── main.tsx
 ```
+
+Styles are desktop-first: each block file ends with `@media (hover: hover)` and `max-width` queries for 1025px (tablet), 768px and 528px (mobile).
 
 Content lives in `src/data/content.ts`, so copy and pricing can be changed without touching markup.
 
@@ -50,6 +57,7 @@ npm run dev       # http://localhost:5173
 npm run build     # type-check + production build into dist/
 npm run preview   # preview the production build
 npm run lint
+npm run format    # prettier
 ```
 
 ## Deployment

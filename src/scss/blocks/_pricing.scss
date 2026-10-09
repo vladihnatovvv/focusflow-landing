@@ -1,0 +1,208 @@
+.pricing {
+    padding: 112px 0px;
+    background-color: $colorWhite;
+
+    &__switch {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+        gap: 24px;
+        margin-top: 64px;
+    }
+}
+
+.switch-pricing {
+    display: inline-flex;
+    padding: 4px;
+    border-radius: 999px;
+    background-color: $colorPaper;
+    box-shadow: inset 0 0 0 1px rgba($colorInk, 0.05);
+
+    &__button {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        border-radius: 999px;
+        background-color: transparent;
+        font-size: 14px;
+        font-weight: 600;
+        color: $colorGray;
+        transition: all 0.2s linear;
+
+        &.active {
+            background-color: $colorInk;
+            color: $colorWhite;
+            box-shadow: $shadowSoft;
+        }
+    }
+
+    &__discount {
+        padding: 2px 8px;
+        border-radius: 999px;
+        background-color: $colorMint;
+        font-size: 10px;
+        color: $colorGreenDeep;
+    }
+
+    &__button.active &__discount {
+        background-color: $colorGreenLight;
+        color: $colorInk;
+    }
+}
+
+.plan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border: 1px solid rgba($colorInk, 0.1);
+    border-radius: 24px;
+    background-color: $colorWhite;
+
+    &.popular {
+        margin: -16px 0px;
+        padding: 48px 32px;
+        border-color: transparent;
+        background-color: $colorInk;
+        color: $colorWhite;
+        box-shadow: $shadowPhone;
+    }
+
+    &__badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4px 12px;
+        border-radius: 999px;
+        background-color: $colorAmberLight;
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap;
+        color: $colorInk;
+    }
+
+    &__name {
+        font-family: $fontTitle;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    &__text {
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 150%;
+        color: $colorGray;
+    }
+
+    &__price {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+        margin-top: 24px;
+    }
+
+    &__value {
+        font-family: $fontTitle;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 100%;
+    }
+
+    &__period {
+        font-size: 14px;
+        color: $colorGray;
+    }
+
+    &__billed {
+        min-height: 18px;
+        margin-top: 4px;
+        font-size: 12px;
+        color: $colorGreenDark;
+    }
+
+    &__list {
+        flex: 1;
+        margin-top: 24px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 14px;
+        line-height: 150%;
+        color: $colorInkSoft;
+
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__check {
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        margin-top: 2px;
+        color: $colorGreenDark;
+    }
+
+    &__button {
+        width: 100%;
+        margin-top: 32px;
+    }
+
+    &.popular &__text,
+    &.popular &__period {
+        color: rgba($colorWhite, 0.65);
+    }
+
+    &.popular &__billed,
+    &.popular &__check {
+        color: $colorGreenLight;
+    }
+
+    &.popular &__item {
+        color: rgba($colorWhite, 0.85);
+    }
+}
+
+@media (max-width: 1025px) {
+    .pricing {
+        padding: 80px 0px;
+
+        &__list {
+            grid-template-columns: 1fr;
+            max-width: 448px;
+            margin: 56px auto 0px auto;
+        }
+    }
+
+    .plan.popular {
+        margin: 0px;
+        padding: 32px;
+    }
+}
+
+@media (max-width: 528px) {
+    .pricing {
+        padding: 64px 0px;
+
+        &__list {
+            margin-top: 40px;
+        }
+    }
+
+    .plan,
+    .plan.popular {
+        padding: 28px 24px;
+    }
+}
