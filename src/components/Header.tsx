@@ -45,7 +45,7 @@ const Header = () => {
     return (
         <header className={classNames("header", isScrolled && "scrolled", isMenuOpen && "active")}>
             <div className="header__container _container">
-                <Logo />
+                <Logo light={!isScrolled && !isMenuOpen} />
 
                 <nav className="header__nav" aria-label="Main">
                     <ul className="header__list">
@@ -60,7 +60,7 @@ const Header = () => {
                 </nav>
 
                 <div className="header__actions">
-                    <a href="#pricing" className="header__button button-black">
+                    <a href="#pricing" className={classNames("header__button", isScrolled || isMenuOpen ? "button-black" : "button-white")}>
                         Get Started
                     </a>
                     <button

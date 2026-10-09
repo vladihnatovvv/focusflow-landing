@@ -6,14 +6,22 @@
     width: 100%;
     height: $headerHeight;
     border-bottom: 1px solid transparent;
-    transition: all 0.2s linear;
+    transition: background-color 0.2s linear, border-color 0.2s linear;
 
     &.scrolled,
     &.active {
         border-bottom-color: rgba($colorInk, 0.06);
-        background-color: rgba($colorPaper, 0.88);
+        background-color: rgba($colorPaper, 0.94);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
+
+        .header__link {
+            color: $colorInkSoft;
+        }
+
+        .header__burger span {
+            background-color: $colorInk;
+        }
     }
 
     &__container {
@@ -34,7 +42,7 @@
         border-radius: 999px;
         font-size: 14px;
         font-weight: 500;
-        color: $colorInkSoft;
+        color: rgba($colorWhite, 0.72);
         transition: all 0.2s linear;
     }
 
@@ -61,7 +69,8 @@
             width: 22px;
             height: 2px;
             border-radius: 2px;
-            background-color: $colorInk;
+            background-color: $colorWhite;
+            color: $colorInk;
             transition: all 0.2s linear;
         }
 
@@ -121,16 +130,27 @@
 
 @media (hover: hover) {
     .header__link:hover {
+            background-color: rgba($colorWhite, 0.12);
+            color: $colorWhite;
+    }
+
+    .header__burger:hover {
+            background-color: rgba($colorWhite, 0.12);
+    }
+
+    .menu-mobile__link:hover {
+        color: $colorGreenDark;
+    }
+}
+
+.header.scrolled {
+    .header__link:hover {
         background-color: rgba($colorInk, 0.05);
         color: $colorInk;
     }
 
     .header__burger:hover {
         background-color: rgba($colorInk, 0.05);
-    }
-
-    .menu-mobile__link:hover {
-        color: $colorGreenDark;
     }
 }
 

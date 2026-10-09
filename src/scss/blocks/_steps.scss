@@ -1,5 +1,15 @@
 .steps {
-    padding: 112px 0px;
+    padding: 120px 0px;
+    background-color: $colorInk;
+    color: $colorWhite;
+
+    .title__text {
+        color: $colorWhite;
+    }
+
+    .title__description {
+        color: rgba($colorWhite, 0.6);
+    }
 
     &__content {
         position: relative;
@@ -17,7 +27,7 @@
         top: 28px;
         right: 16.66%;
         left: 16.66%;
-        border-top: 2px dashed $colorMintLight;
+        border-top: 1px solid rgba($colorWhite, 0.22);
     }
 
     &__item {
@@ -37,11 +47,11 @@
         justify-content: center;
         width: 56px;
         height: 56px;
-        border-radius: 16px;
-        background-color: $colorInk;
+        border-radius: 50%;
+        background-color: $colorGreen;
         box-shadow:
-            0 0 0 8px $colorPaper,
-            $shadowSoft;
+            0 0 0 8px $colorInk,
+            0 12px 28px -14px rgba($colorGreenLight, 0.65);
     }
 
     &__number {
@@ -63,7 +73,7 @@
         margin-top: 8px;
         font-size: 16px;
         line-height: 165%;
-        color: $colorGray;
+        color: rgba($colorWhite, 0.62);
     }
 }
 

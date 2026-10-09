@@ -3,21 +3,21 @@ $headerHeight: 80px;
 $headerHeightMobile: 64px;
 
 // colors
-$colorInk: #0b1220;
-$colorInkSoft: #2a3345;
-$colorGray: #5b6478;
-$colorPaper: #f6f5f1;
-$colorPaperDark: #edebe4;
+$colorInk: #11182c;
+$colorInkSoft: #27314a;
+$colorGray: #626d83;
+$colorPaper: #f7f5ef;
+$colorPaperDark: #eae7de;
 $colorWhite: #fff;
-$colorMint: #e9f6f2;
-$colorMintLight: #cdebe3;
-$colorGreenLight: #2bb89e;
-$colorGreen: #14a38e;
-$colorGreenDark: #0e7a6b;
-$colorGreenDeep: #0b5f54;
-$colorForest: #06302b;
-$colorAmberLight: #f7b84b;
-$colorAmber: #f5a524;
+$colorMint: #dff4ea;
+$colorMintLight: #a6e8cf;
+$colorGreenLight: #65d9a9;
+$colorGreen: #167a60;
+$colorGreenDark: #105b4a;
+$colorGreenDeep: #093d34;
+$colorForest: #092f2a;
+$colorAmberLight: #ffbf66;
+$colorAmber: #e7952e;
 
 // fonts
 $fontTitle: "Bricolage Grotesque", sans-serif;
@@ -25,8 +25,8 @@ $fontText: "Inter", sans-serif;
 
 // shadows
 $shadowSoft:
-    0 1px 2px rgba(11, 18, 32, 0.04),
-    0 8px 24px -8px rgba(11, 18, 32, 0.1);
+    0 1px 2px rgba(17, 24, 44, 0.04),
+    0 16px 32px -18px rgba(17, 24, 44, 0.18);
 $shadowPhone:
     0 40px 80px -24px rgba(6, 48, 43, 0.45),
     0 12px 24px -12px rgba(11, 18, 32, 0.25);
